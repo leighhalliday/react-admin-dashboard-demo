@@ -8,13 +8,25 @@ const sales = [
   { day: "01-07", value: 8000 }
 ];
 
+const generate = () => {
+  const nums = [];
+  for (let i = 0; i < 21; i++) {
+    nums.push(Math.floor(Math.random() * 100) + 15);
+  }
+  return nums;
+};
+
 const categories = [
-  { category: "Tents", value: 30 },
-  { category: "Sleeping Bags", value: 20 },
-  { category: "Kitchen & Hydration", value: 15 },
-  { category: "Clothing", value: 15 },
-  { category: "Footwear", value: 10 },
-  { category: "Tools & Lighting", value: 10 }
+  { category: "Tents", value: 30, recent: generate() },
+  { category: "Sleeping Bags", value: 20, recent: generate() },
+  {
+    category: "Kitchen & Hydration",
+    value: 15,
+    recent: generate()
+  },
+  { category: "Clothing", value: 15, recent: generate() },
+  { category: "Footwear", value: 10, recent: generate() },
+  { category: "Tools & Lighting", value: 10, recent: generate() }
 ];
 
 const reviews = [
@@ -65,16 +77,6 @@ const supports = [
   { id: "555", name: "Jack Jimbo" }
 ];
 
-const states = [
-  ["US-CA", 3557],
-  ["US-NY", 3061],
-  ["US-PA", 2644],
-  ["US-IL", 1803],
-  ["US-FL", 1590],
-  ["US-NJ", 1714],
-  ["US-CO", 1159]
-];
-
 const colors = [
   "#E57373",
   "#9575CD",
@@ -85,13 +87,4 @@ const colors = [
   "#90A4AE"
 ];
 
-export {
-  sales,
-  categories,
-  reviews,
-  customers,
-  deliveries,
-  supports,
-  states,
-  colors
-};
+export { sales, categories, reviews, customers, deliveries, supports, colors };
